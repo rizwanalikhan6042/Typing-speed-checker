@@ -13,3 +13,23 @@ startBtn.addEventListener("click",()=>{
     userInput.focus();
 })
 
+userInput.addEventListener("blur",()=>{
+const endTime=new Date();
+const totalTime=(endTime-startTime)/1000;
+const originalText=textDis.textContent.trim();
+const typedText=userInput.value.trim();
+const wordsTyped=typedText.split(/\s+/).length;
+const speed=Math.round((wordsTyped/totalTime)*60);
+
+let correctChars=0;
+for(let i=0;i<typedText.length&&originalText.length;i++){
+    if(typedText[i]===originalText[i]){
+        correctChars++;
+    }
+}
+const accuracy=Math.round((correctChars/originalText)*100);
+result.textContent=`Speed: ${speed}WPM || Accuracy: ${accuracy}%`;
+
+
+})
+
