@@ -1,5 +1,5 @@
-const textDis=document.getElementById('text-to-type');
-const userInput=document.getElementById('user-input');
+const textDis=document.getElementById('textToType');
+const userInput=document.getElementById('userInput');
 const startBtn = document.getElementById("startBtn");
 const result = document.getElementById("result");
 
@@ -11,6 +11,8 @@ startBtn.addEventListener("click",()=>{
     result.textContent="";
     startTime=new Date();
     userInput.focus();
+console.log(result.textContent)
+
 })
 
 userInput.addEventListener("blur",()=>{
@@ -22,14 +24,13 @@ const wordsTyped=typedText.split(/\s+/).length;
 const speed=Math.round((wordsTyped/totalTime)*60);
 
 let correctChars=0;
-for(let i=0;i<typedText.length&&originalText.length;i++){
+for(let i=0;i<typedText.length && i<originalText.length;i++){
     if(typedText[i]===originalText[i]){
         correctChars++;
     }
 }
-const accuracy=Math.round((correctChars/originalText)*100);
+const accuracy=Math.round((correctChars/originalText.length)*100);
 result.textContent=`Speed: ${speed}WPM || Accuracy: ${accuracy}%`;
-
 
 })
 

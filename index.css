@@ -1,23 +1,66 @@
-#typing-container {
-  width: 80%;
-  margin: 50px auto;
+/* style.css */
+body {
+  background: linear-gradient(135deg, #89f7fe, #66a6ff);
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  background: white;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 600px;
   text-align: center;
-  font-family: Arial, sans-serif;
 }
-#text-to-type,#result{
-    margin-bottom: 20px;
+
+h1 {
+  margin-bottom: 1rem;
+  color: #333;
 }
-#user-input {
+
+#textToType {
+  background: #f4f4f4;
+  padding: 1rem;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  color: #444;
+  margin-bottom: 1rem;
+}
+
+#userInput {
   width: 100%;
   height: 100px;
-  font-size: 18px;
-  padding: 10px;
-  box-sizing: border-box;
+  font-size: 1rem;
+  padding: 0.75rem;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  resize: none;
+  margin-bottom: 1rem;
 }
 
 #startBtn {
-  padding: 10px 20px;
-  font-size: 16px;
-  margin-top: 15px;
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  border-radius: 8px;
   cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+}
+
+#startBtn:hover {
+  background: #0056b3;
+}
+
+#result {
+  margin-top: 1rem;
+  font-weight: bold;
+  color: #222;
 }
